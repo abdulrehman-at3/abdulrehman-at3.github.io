@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdul Rehman Tahir | Cybersecurity Analyst &amp; Python Developer</title>
+  <meta name="description"
+    content="Portfolio of Abdul Rehman Tahir — aspiring SOC / Cybersecurity Analyst and Computer Science student at UCP. Hands-on Python security projects: phishing detection, password auditing, and authenticated encryption.">
+  <meta name="keywords"
+    content="Abdul Rehman Tahir, Cybersecurity Analyst, SOC Analyst, Python Developer, Ethical Hacking, Phishing Detection, Password Security, Encryption, University of Central Punjab, Pakistan">
+  <meta name="author" content="Abdul Rehman Tahir">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#060B16">
+  <link rel="canonical" href="https://abdulrehman-at3.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdul Rehman Tahir | Cybersecurity Analyst & Python Developer">
+  <meta property="og:description"
+    content="Aspiring SOC / Cybersecurity Analyst and CS student building hands-on Python security tooling — phishing detection, password auditing, authenticated encryption.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abdul Rehman Tahir | Cybersecurity Analyst & Python Developer">
+  <meta name="twitter:description"
+    content="Aspiring SOC / Cybersecurity Analyst and CS student building hands-on Python security tooling.">
+  <meta name="twitter:image" content="assets/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" href="assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ============ SVG ICON SPRITE (hidden, referenced via <use>) ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <defs>
+      <g id="ic-shield" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M12 3l7 3v5.2c0 5-3 9.2-7 10.8-4-1.6-7-5.8-7-10.8V6l7-3z" />
+      </g>
+      <g id="ic-terminal" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <polyline points="7,9 11,12.5 7,16" />
+        <line x1="12.5" y1="16" x2="17" y2="16" />
+      </g>
+      <g id="ic-code" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="8,6 3,12 8,18" />
+        <polyline points="16,6 21,12 16,18" />
+      </g>
+      <g id="ic-mail" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <polyline points="3,7 12,13 21,7" />
+      </g>
+      <g id="ic-phone" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path
+          d="M6.5 3h3l1.5 4.5-2.3 1.7a13 13 0 0 0 5.6 5.6l1.7-2.3L20.5 14v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3z" />
+      </g>
+      <g id="ic-linkedin" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="3" />
+        <line x1="7.5" y1="10.5" x2="7.5" y2="16.5" />
+        <circle cx="7.5" cy="7.3" r="0.4" fill="currentColor" />
+        <path d="M11.5 16.5v-3.8a2.2 2.2 0 0 1 4.4 0v3.8" />
+        <line x1="11.5" y1="10.5" x2="11.5" y2="16.5" />
+      </g>
+      <g id="ic-download" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M12 3v12" />
+        <polyline points="7,10.5 12,15.5 17,10.5" />
+        <line x1="4.5" y1="19.5" x2="19.5" y2="19.5" />
+      </g>
+      <g id="ic-external" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M10 6H5.5A2.5 2.5 0 0 0 3 8.5v10A2.5 2.5 0 0 0 5.5 21h10a2.5 2.5 0 0 0 2.5-2.5V14" />
+        <path d="M14 3h7v7" />
+        <line x1="10.5" y1="13.5" x2="21" y2="3" />
+      </g>
+      <g id="ic-pin" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M12 21s7-6.2 7-11.6A7 7 0 0 0 5 9.4C5 14.8 12 21 12 21z" />
+        <circle cx="12" cy="9.4" r="2.2" />
+      </g>
+      <g id="ic-calendar" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="3.5" y="5" width="17" height="16" rx="2" />
+        <line x1="3.5" y1="10" x2="20.5" y2="10" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+      </g>
+      <g id="ic-award" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <circle cx="12" cy="9" r="5.5" />
+        <path d="M8.5 13.5L7 21l5-2.6 5 2.6-1.5-7.5" />
+      </g>
+      <g id="ic-chevron" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="6,9 12,15 18,9" />
+      </g>
+      <g id="ic-menu" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="17" x2="20" y2="17" />
+      </g>
+      <g id="ic-close" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="6" y1="6" x2="18" y2="18" />
+        <line x1="18" y1="6" x2="6" y2="18" />
+      </g>
+      <g id="ic-arrow" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="4" y1="12" x2="19" y2="12" />
+        <polyline points="13,6 19,12 13,18" />
+      </g>
+      <g id="ic-check" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="4,12.5 9.5,18 20,5" />
+      </g>
+      <g id="ic-lock" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
+        <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
+      </g>
+      <g id="ic-cpu" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="7" y="7" width="10" height="10" rx="1.5" />
+        <rect x="3.2" y="10" width="2.3" height="4" />
+        <rect x="18.5" y="10" width="2.3" height="4" />
+        <rect x="10" y="3.2" width="4" height="2.3" />
+        <rect x="10" y="18.5" width="4" height="2.3" />
+      </g>
+      <g id="ic-branch" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <circle cx="6" cy="6" r="2" />
+        <circle cx="6" cy="18" r="2" />
+        <circle cx="18" cy="9" r="2" />
+        <path d="M6 8v8" />
+        <path d="M6 8a6 6 0 0 0 6 6h4" />
+      </g>
+      <g id="ic-book" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5A1.5 1.5 0 0 1 4 18.5v-13z" />
+        <path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5a1.5 1.5 0 0 0 1.5-1.5v-13z" />
+      </g>
+      <g id="ic-target" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8.5" />
+        <circle cx="12" cy="12" r="4.8" />
+        <circle cx="12" cy="12" r="1.1" fill="currentColor" />
+      </g>
+      <g id="ic-star" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+        <path d="M12 3.5l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17.3 6.6 20.4l1-6.1-4.4-4.3 6.1-.9L12 3.5z" />
+      </g>
+      <g id="ic-folder" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path
+          d="M3.5 6.5A1.5 1.5 0 0 1 5 5h4.2l2 2.3H19a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19 19.3H5A1.5 1.5 0 0 1 3.5 17.8v-11.3z" />
+      </g>
+      <g id="ic-send" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="21" y1="3" x2="10.5" y2="13.5" />
+        <polygon points="21,3 14,21 10.5,13.5 3,10" />
+      </g>
+      <g id="ic-activity" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="3,13 8,13 10,8 14,18 16,13 21,13" />
+      </g>
+      <g id="ic-users" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <circle cx="9" cy="8.5" r="3.2" />
+        <path d="M3.2 19c.7-3 3-5 5.8-5s5.1 2 5.8 5" />
+        <circle cx="17" cy="9" r="2.4" />
+        <path d="M15.8 14.2c2.3.3 4.1 2 4.7 4.3" />
+      </g>
+      <g id="ic-briefcase" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="3" y="7.5" width="18" height="12" rx="2" />
+        <path d="M8.5 7.5V6A2 2 0 0 1 10.5 4h3A2 2 0 0 1 15.5 6v1.5" />
+        <line x1="3" y1="12.5" x2="21" y2="12.5" />
+      </g>
+      <g id="ic-flag" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M6 21V4" />
+        <path d="M6 4.5h11l-2.5 4L17 12.5H6" />
+      </g>
+      <g id="ic-key" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <circle cx="8" cy="15" r="4" />
+        <path d="M11 12l8.5-8.5" />
+        <path d="M16.5 6.5l2.5 2.5" />
+        <path d="M14 9l2 2" />
+      </g>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ BOOT SEQUENCE OVERLAY ============ -->
+  <div id="bootOverlay" class="boot-overlay" aria-hidden="true">
+    <div class="boot-lines" id="bootLines"></div>
+  </div>
+
+  <!-- ============ AMBIENT BACKGROUND (fixed, whole page) ============ -->
+  <div class="grid-backdrop" aria-hidden="true"></div>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div class="scroll-progress-track" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap">
+      <a href="#hero" class="brand" aria-label="Abdul Rehman Tahir — home">
+        <span class="brand-mark"><svg width="18" height="18" viewBox="0 0 24 24">
+            <use href="#ic-shield" />
+          </svg></span>
+        <span class="brand-text">rehman<span class="brand-caret">@</span>cyberfolio<span
+            class="brand-blink">_</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Primary">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#github" class="nav-link">GitHub</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="assets/resume/Abdul_Rehman_Tahir_Resume.pdf" download class="btn btn-sm btn-primary nav-resume">
+          <svg width="15" height="15" viewBox="0 0 24 24">
+            <use href="#ic-download" />
+          </svg> Resume
+        </a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="navMenu">
+        <svg width="22" height="22" class="icon-open">
+          <use href="#ic-menu" />
+        </svg>
+        <svg width="22" height="22" class="icon-close">
+          <use href="#ic-close" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="section-inner hero-inner">
+        <div class="hero-content">
+          <p class="status-badge"><span class="status-dot" aria-hidden="true"></span> Open to SOC &amp; Cybersecurity
+            Analyst roles</p>
+          <h1 class="hero-name">Abdul Rehman Tahir</h1>
+          <p class="hero-role"><span class="hero-role-prefix">I am a</span> <span id="typedRole"
+              class="hero-role-typed"></span><span class="type-cursor" aria-hidden="true">|</span></p>
+          <p class="hero-headline">Building secure digital solutions.</p>
+          <p class="hero-desc">Computer Science student building hands-on, security-focused Python projects — phishing
+            detection, password auditing, encryption tooling — while training toward an entry-level SOC or cybersecurity
+            analyst role.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Verified projects <svg width="16" height="16"
+                viewBox="0 0 24 24">
+                <use href="#ic-arrow" />
+              </svg></a>
+            <a href="assets/resume/Abdul_Rehman_Tahir_Resume.pdf" download class="btn btn-ghost"><svg width="16"
+                height="16" viewBox="0 0 24 24">
+                <use href="#ic-download" />
+              </svg> Download resume</a>
+            <a href="#terminal" class="btn btn-text"><svg width="16" height="16" viewBox="0 0 24 24">
+                <use href="#ic-terminal" />
+              </svg> Open terminal</a>
+          </div>
+          <div class="hero-socials">
+            <a href="mailto:abdulrehman.at3.official@gmail.com" class="social-icon"
+              aria-label="Email Abdul Rehman Tahir" title="Email"><svg width="18" height="18" viewBox="0 0 24 24">
+                <use href="#ic-mail" />
+              </svg></a>
+            <a href="https://github.com/abdulrehman-at3" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Abdul Rehman Tahir on GitHub" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24">
+                <use href="#ic-code" />
+              </svg></a>
+            <a href="https://www.linkedin.com/in/mabdul-rehman/" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="Abdul Rehman Tahir on LinkedIn" title="LinkedIn"><svg width="18"
+                height="18" viewBox="0 0 24 24">
+                <use href="#ic-linkedin" />
+              </svg></a>
+            <a href="tel:+923197337028" class="social-icon" aria-label="Call Abdul Rehman Tahir" title="Phone"><svg
+                width="18" height="18" viewBox="0 0 24 24">
+                <use href="#ic-phone" />
+              </svg></a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="status-panel glass">
+            <div class="status-panel-head">
+              <span class="dot-row"><span></span><span></span><span></span></span>
+              <span class="status-panel-title">system_status.live</span>
+            </div>
+            <div class="radar-wrap">
+              <svg class="radar" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="90" class="radar-ring" />
+                <circle cx="100" cy="100" r="62" class="radar-ring" />
+                <circle cx="100" cy="100" r="34" class="radar-ring" />
+                <line x1="100" y1="10" x2="100" y2="190" class="radar-cross" />
+                <line x1="10" y1="100" x2="190" y2="100" class="radar-cross" />
+                <g class="radar-sweep-group">
+                  <path d="M100 100 L100 10 A90 90 0 0 1 163.6 36.4 Z" class="radar-sweep" />
+                </g>
+                <circle cx="140" cy="65" r="3.2" class="radar-node" />
+                <circle cx="60" cy="130" r="3.2" class="radar-node radar-node-b" />
+                <circle cx="150" cy="140" r="2.6" class="radar-node radar-node-c" />
+              </svg>
+            </div>
+            <ul class="status-list">
+              <li><span>Firewall</span><b class="ok">Active</b></li>
+              <li><span>Threat level</span><b class="ok">Low</b></li>
+              <li><span>Encryption</span><b>AES‑256‑GCM</b></li>
+              <li><span>Focus</span><b>SOC readiness</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to content"><svg width="20" height="20"
+          viewBox="0 0 24 24">
+          <use href="#ic-chevron" />
+        </svg></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ who am i</p> -->
+        <h2 class="section-title">Who am I</h2>
+        <div class="about-grid">
+          <p class="about-text">I'm a Computer Science student with a genuine pull toward cybersecurity, secure software
+            development, and Python. I like building practical, security-focused applications that solve real problems —
+            phishing detectors, password auditors, encryption tools — while steadily expanding into ethical hacking,
+            network security, and defensive cybersecurity. Most of what I know, I learned by building it first and
+            reading the theory second.</p>
+          <ul class="stat-chips">
+            <li class="stat-chip"><b>3</b><span>Security projects shipped</span></li>
+            <li class="stat-chip"><b>1</b><span>Cybersecurity internship</span></li>
+            <li class="stat-chip"><b>Python</b><span>-first development</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ cat education.log</p> -->
+        <h2 class="section-title">Education log</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-marker"><svg width="16" height="16" viewBox="0 0 24 24">
+                <use href="#ic-book" />
+              </svg></div>
+            <div class="timeline-card glass">
+              <div class="timeline-card-head">
+                <h3>Associate Degree in Computer Science</h3>
+                <span class="pill pill-done">Completed</span>
+              </div>
+              <p class="timeline-meta">University of Central Punjab (UCP), Lahore · 2023 – 2025</p>
+              <p>Foundational two-year degree covering programming, databases, web development, and software engineering
+                fundamentals.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker"><svg width="16" height="16" viewBox="0 0 24 24">
+                <use href="#ic-target" />
+              </svg></div>
+            <div class="timeline-card glass">
+              <div class="timeline-card-head">
+                <h3>BS Computer Science (Post‑ADP)</h3>
+                <span class="pill pill-progress">In progress</span>
+              </div>
+              <p class="timeline-meta">University of Central Punjab (UCP), Lahore · Expected 2027</p>
+              <p>Completing the bachelor's degree with coursework directly feeding into security‑relevant systems
+                knowledge.</p>
+              <ul class="tag-row">
+                <li>Programming Fundamentals</li>
+                <li>Object‑Oriented Programming</li>
+                <li>Data Structures &amp; Algorithms</li>
+                <li>Database Systems</li>
+                <li>Operating Systems</li>
+                <li>Artificial Intelligence</li>
+                <li>Computer Networks</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ ls -la skills/</p> -->
+        <h2 class="section-title">Skill inventory</h2>
+        <div class="skills-grid">
+
+          <div class="skill-card glass">
+            <h3><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-lock" />
+              </svg> Cybersecurity</h3>
+            <ul class="tag-row">
+              <li>Phishing Detection</li>
+              <li>Password Security</li>
+              <li>Secure Coding</li>
+              <li>Email Security</li>
+              <li>Network Security Fundamentals</li>
+              <li>Threat Analysis</li>
+              <li>Vulnerability Assessment</li>
+              <li>Linux Fundamentals</li>
+              <li>Windows Security Basics</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass">
+            <h3><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-code" />
+              </svg> Programming</h3>
+            <ul class="tag-row">
+              <li>Python</li>
+              <li>C++</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass">
+            <h3><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-cpu" />
+              </svg> Operating Systems</h3>
+            <ul class="tag-row">
+              <li>Linux</li>
+              <li>Windows</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass">
+            <h3><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-branch" />
+              </svg> Version Control</h3>
+            <ul class="tag-row">
+              <li>Git</li>
+              <li>GitHub</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass">
+            <h3><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-terminal" />
+              </svg> Dev Environment</h3>
+            <ul class="tag-row">
+              <li>Visual Studio Code</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass skill-card-learning">
+            <h3><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-target" />
+              </svg> Currently Learning</h3>
+            <ul class="tag-row">
+              <li>Ethical Hacking</li>
+              <li>Penetration Testing</li>
+              <li>Secure Software Development</li>
+              <li>Network Security</li>
+              <li>Defensive Security</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ tail -f experience.log</p> -->
+        <h2 class="section-title">Experience trace</h2>
+
+        <div class="exp-card glass">
+          <div class="exp-card-top">
+            <div class="exp-card-icon"><svg width="20" height="20" viewBox="0 0 24 24">
+                <use href="#ic-briefcase" />
+              </svg></div>
+            <div>
+              <h3>Cybersecurity Intern</h3>
+              <p class="exp-meta">DecodeLabs · Virtual Internship Program · Jul – Aug 2026</p>
+            </div>
+            <a href="#certifications" class="pill pill-verified"><svg width="13" height="13" viewBox="0 0 24 24">
+                <use href="#ic-check" />
+              </svg> Verified</a>
+          </div>
+          <ul class="check-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24">
+                <use href="#ic-check" />
+              </svg> Developed practical cybersecurity projects</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24">
+                <use href="#ic-check" />
+              </svg> Applied secure software development practices</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24">
+                <use href="#ic-check" />
+              </svg> Strengthened Python programming skills</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24">
+                <use href="#ic-check" />
+              </svg> Collaborated on real‑world security‑focused applications</li>
+          </ul>
+        </div>
+
+        <p class="exp-note">Before cybersecurity, I spent 2021–2024 across digital marketing, graphic design, and social
+          media management — leading client projects at Uni Solutions, and handling design and content for Antique Cafe
+          and Mr. Hungry. That work is where the communication and analytical habits I now bring to security actually
+          came from.</p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ ls -la projects/ --verified</p> -->
+        <h2 class="section-title">Verified projects</h2>
+        <p class="section-lede">Three Python projects, each shipped end‑to‑end — read, tested, and pushed to GitHub.</p>
+
+        <div class="project-list">
+
+          <article class="project-card glass">
+            <div class="project-card-head">
+              <span class="project-icon"><svg width="20" height="20" viewBox="0 0 24 24">
+                  <use href="#ic-lock" />
+                </svg></span>
+              <div>
+                <span class="pill pill-verified"><svg width="12" height="12" viewBox="0 0 24 24">
+                    <use href="#ic-check" />
+                  </svg> Verified · Flask app</span>
+                <h3>PhishGuard</h3>
+                <p class="project-tagline">Context‑aware phishing email detector</p>
+              </div>
+            </div>
+            <p class="project-body">The first version flagged any email containing words like <em>verify</em>,
+              <em>OTP</em>, or <em>limited time</em> — which meant ordinary marketing mail and routine login codes got
+              caught alongside real phishing. v2 separates the two questions that actually matter: what kind of message
+              is this, and is there real evidence of an attack? Marketing and routine security language only count
+              against a message when paired with hard evidence — a spoofed sender or a malicious link — never on their
+              own.</p>
+            <ul class="feature-list">
+              <li>Classifies message type before scoring — Marketing, Security Notice, Transactional, Newsletter,
+                Personal</li>
+              <li>Evidence‑based 0–100 risk score: spoofed senders, lookalike URLs, credential requests</li>
+              <li>Surfaces positive indicators, not just red flags</li>
+              <li>CSRF protection, rate limiting, secure headers, sanitized input — OWASP‑inspired</li>
+              <li>35 automated tests across the classifier and the full request cycle</li>
+            </ul>
+            <div class="project-footer">
+              <ul class="tag-row tag-row-tech">
+                <li>Python</li>
+                <li>Flask</li>
+                <li>Bootstrap 5</li>
+                <li>JavaScript</li>
+                <li>Pytest</li>
+              </ul>
+              <a href="https://github.com/abdulrehman-at3" target="_blank" rel="noopener noreferrer"
+                class="btn btn-text btn-sm">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24">
+                  <use href="#ic-external" />
+                </svg></a>
+            </div>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-card-head">
+              <span class="project-icon"><svg width="20" height="20" viewBox="0 0 24 24">
+                  <use href="#ic-key" />
+                </svg></span>
+              <div>
+                <span class="pill pill-verified"><svg width="12" height="12" viewBox="0 0 24 24">
+                    <use href="#ic-check" />
+                  </svg> Verified · DecodeLabs week 1</span>
+                <h3>CyberShield</h3>
+                <p class="project-tagline">Password strength &amp; entropy analyzer</p>
+              </div>
+            </div>
+            <p class="project-body">Built in week one of my DecodeLabs internship to go past a simple length check.
+              CyberShield scores a password on composition, estimates its entropy and brute‑force search space, and
+              checks it against common‑password and dictionary‑word lists — then explains exactly why the score landed
+              where it did.</p>
+            <ul class="feature-list">
+              <li>Entropy calculation and brute‑force search‑space estimate</li>
+              <li>Dictionary and common‑password detection</li>
+              <li>Character‑composition scoring and strength classification</li>
+              <li>Secure random password generator with adjustable complexity</li>
+              <li>Exportable plain‑text analysis report</li>
+            </ul>
+            <div class="project-footer">
+              <ul class="tag-row tag-row-tech">
+                <li>Python 3</li>
+                <li>OOP</li>
+                <li>File I/O</li>
+              </ul>
+              <a href="https://github.com/abdulrehman-at3" target="_blank" rel="noopener noreferrer"
+                class="btn btn-text btn-sm">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24">
+                  <use href="#ic-external" />
+                </svg></a>
+            </div>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-card-head">
+              <span class="project-icon"><svg width="20" height="20" viewBox="0 0 24 24">
+                  <use href="#ic-shield" />
+                </svg></span>
+              <div>
+                <span class="pill pill-verified"><svg width="12" height="12" viewBox="0 0 24 24">
+                    <use href="#ic-check" />
+                  </svg> Verified · Crypto CLI</span>
+                <h3>Encrypto</h3>
+                <p class="project-tagline">Encryption / decryption toolkit</p>
+              </div>
+            </div>
+            <p class="project-body">One command‑line interface over three ciphers: classical Caesar and Vigenère for the
+              fundamentals, and password‑derived AES‑256 in authenticated GCM mode for the real thing. Every AES token
+              carries its own salt, nonce, and authentication tag — a wrong password or a single edited character and
+              the token is rejected outright, not silently decrypted into garbage.</p>
+            <ul class="feature-list">
+              <li>Caesar and Vigenère ciphers for classical cryptography fundamentals</li>
+              <li>AES‑256‑GCM with password‑derived keys (PBKDF2 + PyCryptodome)</li>
+              <li>Tamper detection — modified or mismatched tokens are rejected, not decrypted</li>
+              <li>URL‑safe Base64 tokens bundling salt, nonce, and auth tag</li>
+              <li>Unit‑tested cipher and utility modules</li>
+            </ul>
+            <div class="project-footer">
+              <ul class="tag-row tag-row-tech">
+                <li>Python</li>
+                <li>PyCryptodome</li>
+                <li>AES‑GCM</li>
+                <li>Unittest</li>
+              </ul>
+              <a href="https://github.com/abdulrehman-at3" target="_blank" rel="noopener noreferrer"
+                class="btn btn-text btn-sm">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24">
+                  <use href="#ic-external" />
+                </svg></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="section" id="certifications">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ gpg --verify credentials/</p> -->
+        <h2 class="section-title">Credentials</h2>
+        <div class="cert-grid">
+
+          <div class="cert-card glass">
+            <div class="cert-card-icon"><svg width="22" height="22" viewBox="0 0 24 24">
+                <use href="#ic-award" />
+              </svg></div>
+            <div class="cert-card-body">
+              <h3>DecodeLabs Virtual Internship — Cyber Security</h3>
+              <p class="project-tagline">Certificate of Completion · Student ID CS086516</p>
+              <p>Awarded for completing the DecodeLabs Virtual Internship Program in the Cyber Security track, July 5 –
+                August 5, 2026.</p>
+            </div>
+            <a href="assets/certificates/DecodeLabs_Internship_Certificate.pdf" target="_blank"
+              rel="noopener noreferrer" class="btn btn-ghost btn-sm">View certificate <svg width="14" height="14"
+                viewBox="0 0 24 24">
+                <use href="#ic-external" />
+              </svg></a>
+          </div>
+
+          <div class="cert-card glass">
+            <div class="cert-card-icon"><svg width="22" height="22" viewBox="0 0 24 24">
+                <use href="#ic-award" />
+              </svg></div>
+            <div class="cert-card-body">
+              <h3>Letter of Recommendation</h3>
+              <p class="project-tagline">DecodeLabs · Dated August 9, 2026</p>
+              <p>Written recommendation from DecodeLabs following the internship, covering technical performance and
+                collaboration.</p>
+            </div>
+            <a href="assets/certificates/Letter_of_Recommendation.pdf" target="_blank" rel="noopener noreferrer"
+              class="btn btn-ghost btn-sm">View letter <svg width="14" height="14" viewBox="0 0 24 24">
+                <use href="#ic-external" />
+              </svg></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ROADMAP / FUTURE GOALS ============ -->
+    <section class="section" id="roadmap">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ cat roadmap.todo</p> -->
+        <h2 class="section-title">Next objectives</h2>
+        <ul class="roadmap-list">
+          <li class="roadmap-item glass">
+            <span class="pill pill-progress">Planned</span>
+            <h3>CompTIA Security+</h3>
+            <p>Vendor‑neutral baseline covering the core concepts SOC teams expect on day one.</p>
+          </li>
+          <li class="roadmap-item glass">
+            <span class="pill pill-progress">Planned</span>
+            <h3>Google Cybersecurity Professional Certificate</h3>
+            <p>Structured path through SOC fundamentals, SIEM tools, and incident response.</p>
+          </li>
+          <li class="roadmap-item glass">
+            <span class="pill pill-progress">Planned</span>
+            <h3>Certified Ethical Hacker (CEH)</h3>
+            <p>Formal grounding in offensive‑security methodology to sharpen defensive thinking.</p>
+          </li>
+          <li class="roadmap-item glass">
+            <span class="pill pill-progress">Planned</span>
+            <h3>TryHackMe Learning Paths</h3>
+            <p>Guided, hands‑on labs to build muscle memory across security domains.</p>
+          </li>
+          <li class="roadmap-item glass">
+            <span class="pill pill-progress">Planned</span>
+            <h3>Hack The Box Labs</h3>
+            <p>Independent, unguided practice against realistic vulnerable machines.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ GITHUB LIVE ============ -->
+    <section class="section" id="github">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ curl api.github.com/users/abdulrehman-at3</p> -->
+        <h2 class="section-title">Live from GitHub</h2>
+
+        <div class="gh-panel glass">
+          <div class="gh-identity">
+            <img id="ghAvatar" class="gh-avatar"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt="" width="64"
+              height="64" hidden>
+            <div>
+              <p class="gh-username">@abdulrehman-at3</p>
+              <p id="ghBio" class="gh-bio">Cybersecurity student · Python developer</p>
+            </div>
+            <a href="https://github.com/abdulrehman-at3" target="_blank" rel="noopener noreferrer"
+              class="btn btn-ghost btn-sm gh-profile-btn">Full profile <svg width="14" height="14" viewBox="0 0 24 24">
+                <use href="#ic-external" />
+              </svg></a>
+          </div>
+
+          <div class="gh-stats" id="ghStats">
+            <div class="gh-stat"><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-folder" />
+              </svg><b id="ghRepos">—</b><span>Repositories</span></div>
+            <div class="gh-stat"><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-users" />
+              </svg><b id="ghFollowers">—</b><span>Followers</span></div>
+            <div class="gh-stat"><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-branch" />
+              </svg><b id="ghFollowing">—</b><span>Following</span></div>
+            <div class="gh-stat"><svg width="17" height="17" viewBox="0 0 24 24">
+                <use href="#ic-calendar" />
+              </svg><b id="ghSince">—</b><span>On GitHub since</span></div>
+          </div>
+
+          <p id="ghStatus" class="gh-status" role="status"></p>
+
+          <div class="gh-chart-wrap">
+            <p class="gh-chart-label">Contribution activity</p>
+            <img id="ghContribution" class="gh-contribution-img"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7"
+              alt="Abdul Rehman Tahir's GitHub contribution graph" loading="lazy">
+          </div>
+
+          <div class="gh-repos" id="ghRepoList" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TERMINAL ============ -->
+    <section class="section" id="terminal">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ ./connect.sh --interactive</p> -->
+        <h2 class="section-title">Open a session</h2>
+        <p class="section-lede">A small live terminal. Type <code>help</code> to see what it knows.</p>
+
+        <div class="terminal-window glass" id="terminalWindow">
+          <div class="terminal-chrome">
+            <span class="dot-row"><span></span><span></span><span></span></span>
+            <span class="terminal-title">rehman@cyberfolio: ~</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="terminal-output" id="terminalOutput"></div>
+            <form id="terminalForm" class="terminal-inputline" autocomplete="off">
+              <label for="terminalInput" class="terminal-prompt">rehman@cyberfolio:~$</label>
+              <input id="terminalInput" name="terminalInput" type="text" spellcheck="false" autocapitalize="off"
+                aria-label="Terminal command input">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section class="section" id="achievements">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ cat achievements.log</p> -->
+        <h2 class="section-title">Achievements log</h2>
+        <ul class="achv-grid">
+          <li class="achv-card glass"><svg width="20" height="20" viewBox="0 0 24 24">
+              <use href="#ic-code" />
+            </svg>
+            <p>Developed practical cybersecurity applications</p>
+          </li>
+          <li class="achv-card glass"><svg width="20" height="20" viewBox="0 0 24 24">
+              <use href="#ic-award" />
+            </svg>
+            <p>Completed a cybersecurity internship at DecodeLabs</p>
+          </li>
+          <li class="achv-card glass"><svg width="20" height="20" viewBox="0 0 24 24">
+              <use href="#ic-lock" />
+            </svg>
+            <p>Built multiple security‑focused Python projects</p>
+          </li>
+          <li class="achv-card glass"><svg width="20" height="20" viewBox="0 0 24 24">
+              <use href="#ic-activity" />
+            </svg>
+            <p>Continuously learning modern cybersecurity concepts</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="section-inner">
+        <!-- <p class="eyebrow">~$ ping rehman --secure</p> -->
+        <h2 class="section-title">Establish contact</h2>
+        <p class="section-lede">Open to entry‑level SOC and cybersecurity analyst roles — reach out directly or send a
+          message below.</p>
+
+        <div class="contact-grid">
+          <ul class="contact-cards">
+            <li><a href="mailto:abdulrehman.at3.official@gmail.com" class="contact-card glass"><svg width="19"
+                  height="19" viewBox="0 0 24 24">
+                  <use href="#ic-mail" />
+                </svg>
+                <div><span>Email</span><b>abdulrehman.at3.official@gmail.com</b></div>
+              </a></li>
+            <li><a href="tel:+923197337028" class="contact-card glass"><svg width="19" height="19" viewBox="0 0 24 24">
+                  <use href="#ic-phone" />
+                </svg>
+                <div><span>Phone</span><b>+92 319 7337028</b></div>
+              </a></li>
+            <li><a href="https://www.linkedin.com/in/mabdul-rehman/" target="_blank" rel="noopener noreferrer"
+                class="contact-card glass"><svg width="19" height="19" viewBox="0 0 24 24">
+                  <use href="#ic-linkedin" />
+                </svg>
+                <div><span>LinkedIn</span><b>/in/mabdul-rehman</b></div>
+              </a></li>
+            <li><a href="https://github.com/abdulrehman-at3" target="_blank" rel="noopener noreferrer"
+                class="contact-card glass"><svg width="19" height="19" viewBox="0 0 24 24">
+                  <use href="#ic-code" />
+                </svg>
+                <div><span>GitHub</span><b>@abdulrehman-at3</b></div>
+              </a></li>
+            <li>
+              <div class="contact-card glass contact-card-static"><svg width="19" height="19" viewBox="0 0 24 24">
+                  <use href="#ic-pin" />
+                </svg>
+                <div><span>Location</span><b>Pakistan</b></div>
+              </div>
+            </li>
+          </ul>
+
+          <form class="contact-form glass" id="contactForm">
+            <div class="form-row">
+              <label for="cfName">Name</label>
+              <input id="cfName" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="form-row">
+              <label for="cfEmail">Your email</label>
+              <input id="cfEmail" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="form-row">
+              <label for="cfMessage">Message</label>
+              <textarea id="cfMessage" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send via email app <svg width="15" height="15"
+                viewBox="0 0 24 24">
+                <use href="#ic-send" />
+              </svg></button>
+            <p class="form-hint">Opens your email app with this pre‑filled — nothing is sent from this page.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p class="footer-status"><span class="status-dot" aria-hidden="true"></span> All systems operational · © <span
+          id="year"></span> Abdul Rehman Tahir</p>
+      <div class="footer-right">
+        <a href="mailto:abdulrehman.at3.official@gmail.com" class="social-icon" aria-label="Email"><svg width="16"
+            height="16" viewBox="0 0 24 24">
+            <use href="#ic-mail" />
+          </svg></a>
+        <a href="https://github.com/abdulrehman-at3" target="_blank" rel="noopener noreferrer" class="social-icon"
+          aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24">
+            <use href="#ic-code" />
+          </svg></a>
+        <a href="https://www.linkedin.com/in/mabdul-rehman/" target="_blank" rel="noopener noreferrer"
+          class="social-icon" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24">
+            <use href="#ic-linkedin" />
+          </svg></a>
+        <a href="#hero" class="back-to-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/terminal.js" defer></script>
+  <script src="js/github.js" defer></script>
+</body>
+
+</html>
