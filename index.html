@@ -312,35 +312,21 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="status-panel glass">
-            <div class="status-panel-head">
-              <span class="dot-row"><span></span><span></span><span></span></span>
-              <span class="status-panel-title">system_status.live</span>
-            </div>
-            <div class="radar-wrap">
-              <svg class="radar" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="90" class="radar-ring" />
-                <circle cx="100" cy="100" r="62" class="radar-ring" />
-                <circle cx="100" cy="100" r="34" class="radar-ring" />
-                <line x1="100" y1="10" x2="100" y2="190" class="radar-cross" />
-                <line x1="10" y1="100" x2="190" y2="100" class="radar-cross" />
-                <g class="radar-sweep-group">
-                  <path d="M100 100 L100 10 A90 90 0 0 1 163.6 36.4 Z" class="radar-sweep" />
-                </g>
-                <circle cx="140" cy="65" r="3.2" class="radar-node" />
-                <circle cx="60" cy="130" r="3.2" class="radar-node radar-node-b" />
-                <circle cx="150" cy="140" r="2.6" class="radar-node radar-node-c" />
-              </svg>
-            </div>
-            <ul class="status-list">
-              <li><span>Firewall</span><b class="ok">Active</b></li>
-              <li><span>Threat level</span><b class="ok">Low</b></li>
-              <li><span>Encryption</span><b>AES‑256‑GCM</b></li>
-              <li><span>Focus</span><b>SOC readiness</b></li>
-            </ul>
+              <div class="hero-visual">
+        <div class="hero-photo-card glass">
+          <div class="status-panel-head">
+            <span class="dot-row"><span></span><span></span><span></span></span>
+            <span class="status-panel-title">identity.verified</span>
           </div>
+          <div class="hero-photo-frame">
+            <span class="hero-photo-ring" aria-hidden="true"></span>
+            <img src="assets/images/profile.png" alt="Abdul Rehman Tahir" class="hero-photo" width="400" height="400">
+          </div>
+          <p class="hero-photo-caption">
+            <span class="pill pill-verified"><svg width="12" height="12" viewBox="0 0 24 24"><use href="#ic-check"/></svg> Identity verified</span>
+          </p>
         </div>
+      </div>
       </div>
       <a href="#about" class="scroll-cue" aria-label="Scroll to content"><svg width="20" height="20"
           viewBox="0 0 24 24">
@@ -394,7 +380,7 @@
               </svg></div>
             <div class="timeline-card glass">
               <div class="timeline-card-head">
-                <h3>BS Computer Science (Post‑ADP)</h3>
+                <h3>BS Computer Science</h3>
                 <span class="pill pill-progress">In progress</span>
               </div>
               <p class="timeline-meta">University of Central Punjab (UCP), Lahore · Expected 2027</p>
@@ -565,7 +551,8 @@
               caught alongside real phishing. v2 separates the two questions that actually matter: what kind of message
               is this, and is there real evidence of an attack? Marketing and routine security language only count
               against a message when paired with hard evidence — a spoofed sender or a malicious link — never on their
-              own.</p>
+              own.
+            </p>
             <ul class="feature-list">
               <li>Classifies message type before scoring — Marketing, Security Notice, Transactional, Newsletter,
                 Personal</li>
@@ -673,42 +660,7 @@
       <div class="section-inner">
         <!-- <p class="eyebrow">~$ gpg --verify credentials/</p> -->
         <h2 class="section-title">Credentials</h2>
-        <div class="cert-grid">
-
-          <div class="cert-card glass">
-            <div class="cert-card-icon"><svg width="22" height="22" viewBox="0 0 24 24">
-                <use href="#ic-award" />
-              </svg></div>
-            <div class="cert-card-body">
-              <h3>DecodeLabs Virtual Internship — Cyber Security</h3>
-              <p class="project-tagline">Certificate of Completion · Student ID CS086516</p>
-              <p>Awarded for completing the DecodeLabs Virtual Internship Program in the Cyber Security track, July 5 –
-                August 5, 2026.</p>
-            </div>
-            <a href="assets/certificates/DecodeLabs_Internship_Certificate.pdf" target="_blank"
-              rel="noopener noreferrer" class="btn btn-ghost btn-sm">View certificate <svg width="14" height="14"
-                viewBox="0 0 24 24">
-                <use href="#ic-external" />
-              </svg></a>
-          </div>
-
-          <div class="cert-card glass">
-            <div class="cert-card-icon"><svg width="22" height="22" viewBox="0 0 24 24">
-                <use href="#ic-award" />
-              </svg></div>
-            <div class="cert-card-body">
-              <h3>Letter of Recommendation</h3>
-              <p class="project-tagline">DecodeLabs · Dated August 9, 2026</p>
-              <p>Written recommendation from DecodeLabs following the internship, covering technical performance and
-                collaboration.</p>
-            </div>
-            <a href="assets/certificates/Letter_of_Recommendation.pdf" target="_blank" rel="noopener noreferrer"
-              class="btn btn-ghost btn-sm">View letter <svg width="14" height="14" viewBox="0 0 24 24">
-                <use href="#ic-external" />
-              </svg></a>
-          </div>
-
-        </div>
+                <div class="cert-grid" id="certGrid" aria-live="polite"></div>
       </div>
     </section>
 
@@ -944,6 +896,7 @@
   <script src="js/main.js" defer></script>
   <script src="js/terminal.js" defer></script>
   <script src="js/github.js" defer></script>
+  <script src="js/certificates.js" defer></script>
 </body>
 
 </html>
