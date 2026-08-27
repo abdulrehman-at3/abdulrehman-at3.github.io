@@ -116,7 +116,7 @@
       scrollToSection("contact");
     },
     resume: function () {
-      printLine("Downloading résumé ...", "t-ok");
+      printLine("Downloading resume ...", "t-ok");
       var a = document.createElement("a");
       a.href = "assets/resume/Abdul_Rehman_Tahir_Resume.pdf";
       a.download = "";
@@ -150,7 +150,7 @@
     },
     "sudo hire-me": function () {
       printLine("[sudo] password for recruiter: ", "t-dim");
-      printLine("Permission granted. Reviewing résumé now would be a great next step →", "t-ok");
+      printLine("Permission granted. Reviewing resume now would be a great next step →", "t-ok");
       window.setTimeout(function () {
         var a = document.createElement("a");
         a.href = "assets/resume/Abdul_Rehman_Tahir_Resume.pdf";
