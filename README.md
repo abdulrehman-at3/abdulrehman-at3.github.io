@@ -1,137 +1,314 @@
-# CyberFolio — Abdul Rehman Tahir
+# CyberFolio - Abdul Rehman Tahir
 
-A dark, cybersecurity-themed portfolio site. Static HTML/CSS/JS — no build step,
-no framework, no dependencies to install. Open `index.html` and it runs; push
-the folder to any static host and it's live.
+> A cybersecurity-focused personal portfolio built to showcase practical projects, technical skills, certifications, experience, and ongoing growth in cybersecurity.
 
-**Live sections:** Hero · About · Education · Skills · Experience · Projects
-(PhishGuard, CyberShield, Encrypto) · Certifications · Roadmap · Live GitHub
-stats · Interactive terminal · Achievements · Contact
+[![Live Portfolio](https://img.shields.io/badge/Portfolio-Live-0ea5e9?style=flat-square&logo=googlechrome&logoColor=white)](https://abdulrehman-at3.github.io/)
+[![GitHub](https://img.shields.io/badge/GitHub-abdulrehman--at3-181717?style=flat-square&logo=github)](https://github.com/abdulrehman-at3)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Abdul%20Rehman%20Tahir-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mabdul-rehman/)
 
----
+## About the Project
 
-## 1. Project structure
+CyberFolio is my personal cybersecurity portfolio and a central place to document my work, skills, projects, certifications, and professional progress.
 
+I built it with a simple goal: make my work easy to explore while keeping the experience clean, fast, and professional. Instead of relying on a large frontend framework or a backend server, the site uses standard web technologies and lightweight JavaScript.
+
+The portfolio brings together:
+
+- A cybersecurity-focused introduction
+- Technical skills and education
+- Professional experience and achievements
+- Practical cybersecurity projects
+- Internship certificates and other credentials
+- Resume and supporting documents
+- Live GitHub information
+- An interactive terminal-style interface
+- Contact and social links
+
+## Featured Projects
+
+### PhishGuard
+
+A Flask-based phishing email detection system focused on identifying suspicious email content using contextual analysis and security checks.
+
+### CyberShield
+
+A Python password security tool that analyzes password strength, entropy, common patterns, repeated characters, dictionary weaknesses, and other indicators of weak passwords.
+
+### Encrypto
+
+A command-line encryption and decryption toolkit that includes classical ciphers and modern authenticated encryption such as AES-GCM with password-based key derivation.
+
+These projects are included to show practical application of cybersecurity concepts through hands-on development.
+
+## Key Features
+
+### Interactive Terminal
+
+The terminal provides a different way to navigate the portfolio using commands such as:
+
+```text
+help
+whoami
+about
+skills
+projects
+resume
+neofetch
 ```
+
+It is a guided portfolio interface, not a real command shell. It does not execute arbitrary system commands.
+
+### Live GitHub Section
+
+The site retrieves public GitHub profile information through the GitHub REST API and displays it directly in the portfolio.
+
+The integration is designed to fail gracefully, so the rest of the portfolio continues to work even when GitHub data is temporarily unavailable or rate-limited.
+
+### Certificates and Resume
+
+Certificates, the Letter of Recommendation, and the resume are included as portfolio resources and can be viewed or opened directly from the site.
+
+### Responsive Design
+
+The layout is designed for both desktop and mobile screens. Interactive effects also respect the user's reduced-motion preference through `prefers-reduced-motion`.
+
+## Technology Stack
+
+| Area | Technology |
+|---|---|
+| Structure | HTML5, semantic HTML |
+| Styling | CSS3, CSS custom properties, responsive CSS |
+| Interactivity | Vanilla JavaScript |
+| Icons | Inline SVG |
+| GitHub Integration | GitHub REST API |
+| Hosting | GitHub Pages, Netlify, or Vercel |
+
+There is no frontend framework, backend, database, or build pipeline required.
+
+## Project Structure
+
+```text
 CyberFolio/
-├── index.html                  All markup, in one file for easy editing
+├── index.html
 ├── css/
-│   └── style.css               Full design system (colors, type, layout, animation)
+│   └── style.css
 ├── js/
-│   ├── main.js                 Nav, scroll progress, reveal animations, hero canvas, contact form
-│   ├── terminal.js             The interactive terminal's command engine
-│   └── github.js               Live GitHub API integration (stats + repos + contribution chart)
+│   ├── main.js
+│   ├── terminal.js
+│   ├── github.js
+│   └── certificates.js
 ├── assets/
 │   ├── favicon.svg
-│   ├── og-image.png            Social share preview image (LinkedIn/Twitter/etc.)
+│   ├── og-image.png
+│   ├── images/
+│   │   └── profile.png
 │   ├── resume/
-│   │   └── Abdul_Rehman_Tahir_Resume.pdf     ← the résumé download button serves this file
+│   │   └── Abdul_Rehman_Tahir_Resume.pdf
 │   └── certificates/
+│       ├── certificates.json
 │       ├── DecodeLabs_Internship_Certificate.pdf
+│       ├── Introduction to Cybersecurity Awareness.pdf
 │       └── Letter_of_Recommendation.pdf
 ├── robots.txt
-└── .nojekyll                   Tells GitHub Pages to skip Jekyll processing
+├── .nojekyll
+└── README.md
 ```
 
-To update your résumé later, just replace the PDF in `assets/resume/` and keep
-the same filename — every download link on the site points to that one file.
+## Run Locally
 
----
+CyberFolio is a static website, so there is no dependency installation or build step.
 
-## 2. Preview it locally
-
-Opening `index.html` directly in a browser works for layout/content, but the
-**live GitHub stats** section uses `fetch()`, which most browsers block from a
-plain `file://` page. To see everything working, serve the folder instead:
+### Using Python
 
 ```bash
 cd CyberFolio
-python3 -m http.server 8000
-# then open http://localhost:8000
+python -m http.server 8000
 ```
 
-(Any static server works — `npx serve`, VS Code's "Live Server" extension, etc.)
+Then open:
 
----
+```text
+http://localhost:8000
+```
 
-## 3. Deploy it
+### Using VS Code
 
-No build step for any of these — you're deploying the folder as-is.
+Open the project folder in Visual Studio Code and use the **Live Server** extension to launch the site.
+
+### Using Another Static Server
+
+Any static HTTP server can be used to serve the project files.
+
+Running the site through a local HTTP server is recommended instead of opening `index.html` directly with `file://`, especially for browser-based GitHub API requests.
+
+## Deployment
+
+No build command is needed. The project can be deployed directly from the repository.
 
 ### GitHub Pages
-1. Push this folder's contents to a repo (e.g. `abdulrehman-at3.github.io` for
-   a user site, or any repo name for a project site).
-2. Repo → **Settings → Pages** → set **Source** to the branch you pushed
-   (usually `main`) and folder `/root`.
-3. Your site publishes at `https://<username>.github.io/` (user site) or
-   `https://<username>.github.io/<repo>/` (project site).
+
+1. Push the project to a GitHub repository.
+2. Open the repository and go to **Settings -> Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select the deployment branch, usually `main`.
+5. Select the root folder (`/`).
+6. Save the settings.
+
+For a user site repository named:
+
+```text
+abdulrehman-at3.github.io
+```
+
+the site will normally be available at:
+
+```text
+https://abdulrehman-at3.github.io/
+```
+
+For a project repository, the URL normally follows:
+
+```text
+https://abdulrehman-at3.github.io/<repository-name>/
+```
 
 ### Netlify
-1. [app.netlify.com](https://app.netlify.com) → **Add new site → Deploy manually**
-   → drag the `CyberFolio` folder in. Done — no build command needed.
-   (Or connect the GitHub repo for auto-deploys on every push.)
+
+Connect the GitHub repository to Netlify or upload the project folder manually. No build command is required.
 
 ### Vercel
-1. [vercel.com/new](https://vercel.com/new) → import the repo.
-2. Framework preset: **Other**. Build command: *(leave empty)*. Output
-   directory: *(leave empty / root)*.
+
+Import the repository into Vercel and deploy it as a static site. No framework or build command is required.
+
+## Customization
+
+Most portfolio updates can be made directly in the project files without changing the overall architecture.
+
+### Content
+
+Main portfolio content is stored in:
+
+```text
+index.html
+```
+
+The page is divided into clearly marked sections to make future edits easier.
+
+### Design
+
+Global colors, spacing, typography, and other visual values are defined near the top of:
+
+```text
+css/style.css
+```
+
+The site uses CSS custom properties so the visual system can be updated from one place.
+
+### JavaScript
+
+| File | Purpose |
+|---|---|
+| `main.js` | Navigation, page interactions, visual effects, and contact behavior |
+| `terminal.js` | Interactive terminal commands and output |
+| `github.js` | GitHub profile and activity data |
+| `certificates.js` | Certificate data and certificate display |
+
+### Resume
+
+Replace the existing file at:
+
+```text
+assets/resume/Abdul_Rehman_Tahir_Resume.pdf
+```
+
+Keeping the same filename allows existing links to keep working.
+
+### Certificates
+
+Certificate files are stored in:
+
+```text
+assets/certificates/
+```
+
+Certificate information is maintained in:
+
+```text
+assets/certificates/certificates.json
+```
+
+When adding a new certificate, update the metadata file and add the corresponding document to the certificates folder.
+
+## SEO and Social Sharing
+
+The portfolio includes common SEO and social sharing elements such as:
+
+- Canonical URL metadata
+- Open Graph metadata
+- Twitter/X card metadata
+- Robots configuration
+- Favicon support
+- Social preview image
+
+When moving the site to a different domain, update the canonical URL and social image URLs in `index.html` so search engines and social platforms point to the correct address.
+
+## Privacy and Security
+
+CyberFolio is a client-side static website.
+
+- No custom backend is used.
+- No database is required.
+- GitHub data is limited to publicly available profile information.
+- The contact form uses a `mailto:` workflow instead of a custom server.
+- The terminal interface does not provide real shell access.
+
+## Accessibility
+
+The project includes semantic HTML, accessible labels for interactive elements, responsive layouts, and support for reduced-motion preferences.
+
+Future changes should preserve keyboard navigation, readable contrast, meaningful link text, and useful alternative text for images.
+
+## Development Approach
+
+The project keeps the architecture simple on purpose:
+
+```text
+HTML -> Structure and Content
+CSS  -> Design and Responsive Layout
+JS   -> Interaction and Integrations
+```
+
+This makes CyberFolio easy to maintain, quick to deploy, and suitable for static hosting platforms.
+
+## Roadmap
+
+The portfolio will continue to evolve as I gain more practical cybersecurity experience. Future improvements may include:
+
+- Linking each project directly to its GitHub repository
+- Adding more cybersecurity projects and technical write-ups
+- Publishing detailed case studies for selected projects
+- Further improving accessibility, performance, and SEO
+- Expanding the terminal and GitHub experiences
+
+## Author
+
+**Abdul Rehman Tahir**
+
+Cybersecurity-focused Computer Science student with an interest in practical security, Python development, and building useful security tools through hands-on projects.
+
+**GitHub:** [@abdulrehman-at3](https://github.com/abdulrehman-at3)  
+**LinkedIn:** [Abdul Rehman Tahir](https://www.linkedin.com/in/mabdul-rehman/)  
+**Portfolio:** [abdulrehman-at3.github.io](https://abdulrehman-at3.github.io/)  
+**Email:** abdulrehman.at3.official@gmail.com
+
+## License
+
+This repository is a personal portfolio. The original portfolio content, personal documents, profile images, certificates, branding, and other personal materials are not intended for redistribution or reuse without permission.
+
+Code may be reviewed or referenced for learning purposes, but the portfolio and its personal content should not be copied or presented as someone else's work.
 
 ---
 
-## 4. Before you go live — a short checklist
-
-A few things only you can fill in, since they depend on where you deploy:
-
-- [ ] **`index.html` line ~13** — `<link rel="canonical" href="...">` is set to
-      a guess (`https://abdulrehman-at3.github.io/`). Update it to your real
-      final URL.
-- [ ] **`og:image` / `twitter:image` meta tags** (`index.html`, `<head>`) use a
-      relative path. Social platforms generally want an **absolute** URL for
-      link previews — once deployed, change these to
-      `https://your-domain/assets/og-image.png`.
-- [ ] **Project "View on GitHub" buttons** currently link to your GitHub
-      *profile* (`github.com/abdulrehman-at3`) rather than each individual
-      repo, since the repo URLs weren't confirmed. Once PhishGuard, CyberShield,
-      and Encrypto are pushed under final repo names, point each project
-      card's link at its own repo for a nicer experience.
-- [ ] **Custom domain (optional):** GitHub Pages → add a `CNAME` file with your
-      domain; Netlify/Vercel → add the domain in their dashboard.
-
-Everything else — content, contact details, certificates, résumé — is already
-wired up and live.
-
----
-
-## 5. How a few of the custom features work
-
-- **Interactive terminal** (`js/terminal.js`): a themed command simulation —
-  `whoami`, `about`, `skills`, `projects`, `resume`, `neofetch`, and a few
-  others (`help` lists them all). It doesn't execute real shell commands; it's
-  a guided, safe walkthrough of the page's own content, and `resume` /
-  `sudo hire-me` actually trigger the résumé download.
-- **Live GitHub panel** (`js/github.js`): calls the public GitHub REST API for
-  `abdulrehman-at3` client-side (no token needed, no backend). It fails soft —
-  if the API is rate-limited or offline, the panel just shows a quiet status
-  note and the "Full profile" button still works. The contribution graph is
-  pulled from the community `ghchart.rshah.org` image service.
-- **Contact form**: fully static (no backend to wire up). Submitting it opens
-  the visitor's email app with the message pre-filled via a `mailto:` link —
-  clearly labelled as such so nothing is misleading.
-- **Boot sequence / animations**: respect `prefers-reduced-motion` and skip or
-  simplify automatically for visitors who have that OS setting on.
-
----
-
-## 6. Editing content
-
-Everything is in plain HTML/CSS — no templating, no build step:
-
-- Text content: edit directly in `index.html` (organised section-by-section,
-  each with an HTML comment header like `<!-- ============ PROJECTS ============ -->`).
-- Colors, fonts, spacing: all defined as CSS custom properties at the top of
-  `css/style.css` under `:root{ }` — change a value there and it updates
-  everywhere it's used.
-- Icons: a single inline SVG `<symbol>` sprite near the top of `index.html` —
-  add a new `<g id="ic-yourname">...</g>` and reference it anywhere with
-  `<svg><use href="#ic-yourname"/></svg>` (always keep `viewBox="0 0 24 24"`
-  on the `<svg>` so it scales correctly at any size).
+<p align="center">
+  Built with HTML, CSS, JavaScript, and a genuine interest in cybersecurity.
+</p>
