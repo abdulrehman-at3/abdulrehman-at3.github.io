@@ -16,11 +16,19 @@
     "linkLabel": "View letter"
   },
   {
-  "title": "Introduction to Cybersecurity Awareness",
-  "subtitle": "HP LIFE · Completed August 22, 2026",
-  "description": "Certificate of Completion for the HP LIFE online course covering common cybersecurity threats and basic practices for keeping online data and information more secure.",
-  "file": "Introduction to Cybersecurity Awareness.pdf",
-  "date": "2026-08-22",
-  "linkLabel": "View certificate"
-}
+    "title": "Introduction to Cybersecurity Awareness",
+    "subtitle": "HP LIFE · Completed August 22, 2026",
+    "description": "Certificate of Completion for the HP LIFE online course covering common cybersecurity threats and basic practices for keeping online data and information more secure.",
+    "file": "Introduction to Cybersecurity Awareness.pdf",
+    "date": "2026-08-22",
+    "linkLabel": "View certificate"
+  },
+  {
+    "title": "Build Responsive Website Using HTML5, CSS, JS and Bootstrap",
+    "subtitle": "EDUCBA · Certificate of Completion · October 7, 2021",
+    "description": "Certificate of Completion from EDUCBA for successfully completing the project \"Build Responsive Website Using HTML5, CSS, JS and Bootstrap.\"",
+    "file": "EDUCBA_Build_Responsive_Website_Certificate.pdf",
+    "date": "2021-10-07",
+    "linkLabel": "View certificate"
+  }
 ]
