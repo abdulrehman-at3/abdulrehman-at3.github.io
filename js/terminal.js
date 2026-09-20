@@ -118,7 +118,7 @@
     resume: function () {
       printLine("Downloading resume ...", "t-ok");
       var a = document.createElement("a");
-      a.href = "assets/resume/Abdul_Rehman_Tahir_Resume.pdf";
+      a.href = "assets/resume/Abdul Rehman Tahir CV.pdf";
       a.download = "";
       document.body.appendChild(a);
       a.click();
@@ -153,7 +153,7 @@
       printLine("Permission granted. Reviewing resume now would be a great next step →", "t-ok");
       window.setTimeout(function () {
         var a = document.createElement("a");
-        a.href = "assets/resume/Abdul_Rehman_Tahir_Resume.pdf";
+        a.href = "assets/resume/Abdul Rehman Tahir CV.pdf";
         a.download = "";
         document.body.appendChild(a);
         a.click();
